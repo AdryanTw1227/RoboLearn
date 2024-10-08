@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogos de Robótica</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Jogos de Robótica para Crianças</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="jogos.html">Jogos</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-      </ul>
-    </nav>
-    <img src="assets/ilustracao-de-engrenagem-doodle-icone.png" alt="Engrenagem" class="engrenagem-superior">
-  </header>
-
-  <section id="inicio">
-    <h2>Bem-vindo ao Mundo da Robótica!</h2>
-  </section>
-
-  <section id="jogos">
-    <h2>Escolha um Jogo</h2>
-    <div class="game-grid">
-      {% for jogo in jogos %}
-        <div class="game-card">
-          <img src="{{ jogo.imagem }}" alt="Engrenagem" class="game-image">
-          <h3><a href="{{ url_for('jogo', jogo_id=jogo.id) }}">{{ jogo.titulo }}</a></h3>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2024 Jogos de Robótica. Feito para crianças com diversão!</p>
-  </footer>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/jogos">Jogos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="jogos">
+            <h2>Escolha um Jogo</h2>
+            <div class="game-grid">
+                {% for jogo in jogos %}
+                    <div class="game-card">
+                        <img src="{{ jogo.imagem }}" alt="{{ jogo.titulo }}" class="game-image">
+                        <h3>{{ jogo.titulo }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
 </body>
 </html>
