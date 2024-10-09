@@ -26,17 +26,19 @@
   <section id="jogos">
     <h2>Escolha um Jogo</h2>
     <div class="game-grid">
-      {% for jogo in jogos %}
+      <% jogos.forEach(jogo => { %>
         <div class="game-card">
-          <img src="assets/graident-ai-robot-vectorart-em-ingles.png" alt="Engrenagem" class="game-image">
-          <h3><a href="{{ url_for('jogo', jogo_id=jogo.id) }}">{{ jogo.titulo }}</a></h3>
+          <img src="<%= jogo.imagem %>" alt="Engrenagem" class="game-image">
+          <h3><%= jogo.titulo %></h3>
         </div>
-      {% endfor %}
+      <% }); %>
     </div>
   </section>
 
   <footer>
     <p>© 2024 Jogos de Robótica. Feito para crianças com diversão!</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
